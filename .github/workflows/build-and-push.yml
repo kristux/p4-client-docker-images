@@ -12,6 +12,6 @@ jobs:
         steps:
             - name: Checkout Code
               uses: actions/checkout@v2
-    - name: Build and Push Docker Container
-      run: |
-        docker build -t p4-client:${{ github.sha }} .
+            - name: Build and Push Docker Container
+              run: |
+                docker build -t kristux/p4-client:${{ github.sha }} .
