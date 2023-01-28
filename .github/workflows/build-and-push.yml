@@ -1,0 +1,17 @@
+name: Build and Push Docker Container
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v2
+    - name: Build and Push Docker Container
+      run: |
+        docker build -t p4-client:${{ github.sha }} .
